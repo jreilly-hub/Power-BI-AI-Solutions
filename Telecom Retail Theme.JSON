@@ -1,0 +1,22 @@
+{
+  "name": "Telecom Retail Theme",
+  "dataColors": [
+    "#0057B8",
+    "#0072CE",
+    "#009FDA",
+    "#00B5E2",
+    "#003F6B",
+    "#002A42"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#003F6B",
+  "tableAccent": "#0057B8",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "color": { "solid": { "color": "#003F6B" } },
+        "fontSize": 12
+      }
+    }
+  }
+}
