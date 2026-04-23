@@ -1,0 +1,5 @@
+﻿Total YTD :=
+CALCULATE(
+    [Total Sales],
+    DATESYTD('DimDate'[Date])
+)

@@ -1,0 +1,5 @@
+Prior Quarter :=
+CALCULATE(
+    [Total Sales],
+    DATEADD('DimDate'[Date], -1, QUARTER)
+)

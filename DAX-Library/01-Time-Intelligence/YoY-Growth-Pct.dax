@@ -1,0 +1,9 @@
+YoY Growth % :=
+VAR CurrentYear = [Total Sales]
+VAR PriorYear =
+    CALCULATE(
+        [Total Sales],
+        SAMEPERIODLASTYEAR('DimDate'[Date])
+    )
+RETURN
+DIVIDE(CurrentYear - PriorYear, PriorYear)

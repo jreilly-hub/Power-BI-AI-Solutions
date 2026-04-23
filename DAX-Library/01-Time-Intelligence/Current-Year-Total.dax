@@ -1,0 +1,8 @@
+Current Year Total :=
+CALCULATE(
+    [Total Sales],
+    FILTER(
+        ALL('DimDate'),
+        YEAR('DimDate'[Date]) = YEAR(MAX('DimDate'[Date]))
+    )
+)

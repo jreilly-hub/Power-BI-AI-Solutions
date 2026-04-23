@@ -1,0 +1,10 @@
+Rolling 3M :=
+CALCULATE(
+    [Total Sales],
+    DATESINPERIOD(
+        'DimDate'[Date],
+        MAX('DimDate'[Date]),
+        -3,
+        MONTH
+    )
+)

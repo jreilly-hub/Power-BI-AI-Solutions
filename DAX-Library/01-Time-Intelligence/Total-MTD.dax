@@ -1,0 +1,5 @@
+﻿Total MTD :=
+CALCULATE(
+    [Total Sales],
+    DATESMTD('DimDate'[Date])
+)

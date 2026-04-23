@@ -1,0 +1,8 @@
+Fiscal MTD :=
+CALCULATE(
+    [Total Sales],
+    DATESMTD(
+        'DimDate'[Date],
+        "6/30"
+    )
+)

@@ -1,0 +1,8 @@
+Fiscal YTD :=
+CALCULATE(
+    [Total Sales],
+    DATESYTD(
+        'DimDate'[Date],
+        "6/30"   -- Example: fiscal year ends June 30
+    )
+)

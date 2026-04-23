@@ -1,0 +1,5 @@
+Total QTD :=
+CALCULATE(
+    [Total Sales],
+    DATESQTD('DimDate'[Date])
+)

@@ -1,0 +1,9 @@
+Current Month Total :=
+CALCULATE(
+    [Total Sales],
+    FILTER(
+        ALL('DimDate'),
+        YEAR('DimDate'[Date]) = YEAR(MAX('DimDate'[Date])) &&
+        MONTH('DimDate'[Date]) = MONTH(MAX('DimDate'[Date]))
+    )
+)

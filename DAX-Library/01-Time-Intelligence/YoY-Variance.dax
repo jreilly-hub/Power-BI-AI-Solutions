@@ -1,0 +1,9 @@
+YoY Variance :=
+VAR CurrentYear = [Total Sales]
+VAR PriorYear =
+    CALCULATE(
+        [Total Sales],
+        SAMEPERIODLASTYEAR('DimDate'[Date])
+    )
+RETURN
+CurrentYear - PriorYear

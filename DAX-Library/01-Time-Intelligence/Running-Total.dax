@@ -1,0 +1,8 @@
+Running Total :=
+CALCULATE(
+    [Total Sales],
+    FILTER(
+        ALL('DimDate'),
+        'DimDate'[Date] <= MAX('DimDate'[Date])
+    )
+)
