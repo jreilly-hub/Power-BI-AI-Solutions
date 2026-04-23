@@ -1,0 +1,8 @@
+-- Measure: Sales With Temporary Bi-Directional Filter
+-- Purpose: Applies CROSSFILTER only when absolutely necessary.
+
+Sales With Temporary Bi-Directional Filter :=
+CALCULATE (
+    [Total Sales],
+    CROSSFILTER ( DimProduct[ProductKey], FactSales[ProductKey], BOTH )
+)

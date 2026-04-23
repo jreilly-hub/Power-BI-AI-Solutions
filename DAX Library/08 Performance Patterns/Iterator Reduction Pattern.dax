@@ -1,0 +1,5 @@
+-- Measure: Sales Using Aggregator
+-- Purpose: Replaces SUMX row-by-row iteration with a direct aggregator when possible.
+
+Sales Using Aggregator :=
+SUM ( FactSales[SalesAmount] )

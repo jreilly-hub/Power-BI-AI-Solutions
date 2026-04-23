@@ -1,0 +1,5 @@
+-- Measure: Sales Without Row Context
+-- Purpose: Avoids row context by using SUM instead of SUMX when possible.
+
+Sales Without Row Context :=
+SUM ( FactSales[SalesAmount] )

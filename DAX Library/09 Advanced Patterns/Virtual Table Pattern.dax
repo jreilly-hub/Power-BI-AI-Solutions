@@ -1,0 +1,17 @@
+-- Measure: Top Customers Virtual Table
+-- Purpose: Creates a virtual table and aggregates over it.
+
+Top Customers Virtual Table :=
+VAR TopCustomers =
+    TOPN (
+        10,
+        SUMMARIZE (
+            DimCustomer,
+            DimCustomer[CustomerKey],
+            "Sales", [Total Sales]
+        ),
+        [Sales],
+        DESC
+    )
+RETURN
+SUMX ( TopCustomers, [Sales] )

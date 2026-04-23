@@ -1,0 +1,19 @@
+-- Measure: Manager Level RLS
+-- Purpose: Allows managers to see their own data and all direct/indirect reports.
+
+Manager Level RLS :=
+VAR CurrentUser =
+    USERPRINCIPALNAME ()
+VAR CurrentManager =
+    CALCULATE (
+        SELECTEDVALUE ( DimEmployee[EmployeeKey] ),
+        DimEmployee[Email] = CurrentUser
+    )
+VAR HierarchyPath =
+    PATH ( DimEmployee[EmployeeKey], DimEmployee[ManagerKey] )
+RETURN
+IF (
+    CONTAINSSTRING ( HierarchyPath, CurrentManager ),
+    1,
+    0
+)

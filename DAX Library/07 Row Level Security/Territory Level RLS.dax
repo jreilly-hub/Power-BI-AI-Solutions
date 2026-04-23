@@ -1,0 +1,17 @@
+-- Measure: Territory Level RLS
+-- Purpose: Filters data so users only see their assigned sales territory.
+
+Territory Level RLS :=
+VAR CurrentUser =
+    USERPRINCIPALNAME ()
+VAR UserTerritory =
+    CALCULATE (
+        SELECTEDVALUE ( DimEmployee[Territory] ),
+        DimEmployee[Email] = CurrentUser
+    )
+RETURN
+IF (
+    SELECTEDVALUE ( DimTerritory[Territory] ) = UserTerritory,
+    1,
+    0
+)

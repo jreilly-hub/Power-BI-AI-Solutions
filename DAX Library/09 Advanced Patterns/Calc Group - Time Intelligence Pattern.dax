@@ -1,0 +1,16 @@
+-- Measure: Time Intelligence Calculation Item (Pattern)
+-- Purpose: Template logic for a calculation group time shift.
+
+Time Intelligence (Pattern) :=
+VAR BaseMeasure = SELECTEDMEASURE ()
+VAR Result =
+    SWITCH (
+        SELECTEDVALUE ( TimeCalc[CalcName] ),
+        "Prior Year", CALCULATE ( BaseMeasure, DATEADD ( DimDate[Date], -1, YEAR ) ),
+        "MTD", CALCULATE ( BaseMeasure, DATESMTD ( DimDate[Date] ) ),
+        "QTD", CALCULATE ( BaseMeasure, DATESQTD ( DimDate[Date] ) ),
+        "YTD", CALCULATE ( BaseMeasure, DATESYTD ( DimDate[Date] ) ),
+        BaseMeasure
+    )
+RETURN
+Result

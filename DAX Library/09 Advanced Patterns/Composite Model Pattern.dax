@@ -1,0 +1,10 @@
+-- Measure: Sales Using Local and Remote Sources
+-- Purpose: Combines DirectQuery and Import model data in a composite model.
+
+Sales Using Local and Remote Sources :=
+VAR LocalSales =
+    CALCULATE ( [Total Sales], FactSales[StorageMode] = "Import" )
+VAR RemoteSales =
+    CALCULATE ( [Total Sales], FactSales[StorageMode] = "DirectQuery" )
+RETURN
+LocalSales + RemoteSales

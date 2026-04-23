@@ -1,0 +1,17 @@
+-- Measure: Department Level RLS
+-- Purpose: Restricts users to only see data for their assigned department.
+
+Department Level RLS :=
+VAR CurrentUser =
+    USERPRINCIPALNAME ()
+VAR UserDept =
+    CALCULATE (
+        SELECTEDVALUE ( DimEmployee[Department] ),
+        DimEmployee[Email] = CurrentUser
+    )
+RETURN
+IF (
+    SELECTEDVALUE ( DimDepartment[Department] ) = UserDept,
+    1,
+    0
+)

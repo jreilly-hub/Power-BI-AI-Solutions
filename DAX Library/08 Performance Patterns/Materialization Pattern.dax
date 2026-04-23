@@ -1,0 +1,11 @@
+-- Measure: High Value Sales (Materialized)
+-- Purpose: Forces materialization of a filtered table to improve performance.
+
+High Value Sales (Materialized) :=
+VAR FilteredTable =
+    FILTER (
+        FactSales,
+        FactSales[SalesAmount] > 1000
+    )
+RETURN
+SUMX ( FilteredTable, FactSales[SalesAmount] )

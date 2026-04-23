@@ -1,0 +1,12 @@
+-- Measure: Dynamic Format String (Pattern)
+-- Purpose: Template for calculation group format string logic.
+
+Dynamic Format String (Pattern) :=
+SWITCH (
+    SELECTEDVALUE ( FormatCalc[FormatName] ),
+    "Currency", "$#,##0",
+    "Thousands", "0.0K",
+    "Millions", "0.0M",
+    "Percent", "0.0%",
+    BLANK ()
+)

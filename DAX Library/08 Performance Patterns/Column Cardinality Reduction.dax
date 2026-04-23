@@ -1,0 +1,8 @@
+-- Measure: Sales Rounded to Thousands
+-- Purpose: Reduces cardinality by rounding values before aggregation.
+
+Sales Rounded to Thousands :=
+VAR RoundedAmount =
+    ROUND ( FactSales[SalesAmount], -3 )
+RETURN
+SUM ( RoundedAmount )

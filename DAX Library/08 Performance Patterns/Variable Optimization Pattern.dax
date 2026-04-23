@@ -1,0 +1,8 @@
+-- Measure: Sales with Reused Variables
+-- Purpose: Stores repeated expressions in variables to avoid recalculation.
+
+Sales with Reused Variables :=
+VAR SalesAmount = [Total Sales]
+VAR TaxRate = 0.08
+RETURN
+SalesAmount + ( SalesAmount * TaxRate )

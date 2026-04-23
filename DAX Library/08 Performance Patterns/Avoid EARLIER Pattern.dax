@@ -1,0 +1,10 @@
+-- Measure: Customer Sales Rank (Modern)
+-- Purpose: Replaces EARLIER with RANKX and VAR logic.
+
+Customer Sales Rank (Modern) :=
+RANKX (
+    ALL ( DimCustomer ),
+    [Total Sales],
+    ,
+    DESC
+)

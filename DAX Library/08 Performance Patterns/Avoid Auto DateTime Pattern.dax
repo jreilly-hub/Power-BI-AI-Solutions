@@ -1,0 +1,8 @@
+-- Measure: Sales Using Explicit Date Table
+-- Purpose: Ensures calculations use the explicit DimDate table, not auto date/time.
+
+Sales Using Explicit Date Table :=
+CALCULATE (
+    [Total Sales],
+    REMOVEFILTERS ( 'Date' )   -- prevents accidental use of auto date/time
+)

@@ -1,0 +1,12 @@
+-- Measure: Dynamic RLS by Email
+-- Purpose: Filters data so users only see rows assigned to their email.
+
+Dynamic RLS by Email :=
+VAR CurrentUser =
+    USERPRINCIPALNAME ()
+RETURN
+IF (
+    SELECTEDVALUE ( DimEmployee[Email] ) = CurrentUser,
+    1,
+    0
+)

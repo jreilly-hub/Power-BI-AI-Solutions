@@ -1,0 +1,6 @@
+-- Measure: Margin (Measure-Based)
+-- Purpose: Computes margin as a measure instead of a calculated column.
+
+Margin :=
+SUM ( FactSales[SalesAmount] ) -
+SUM ( FactSales[CostAmount] )

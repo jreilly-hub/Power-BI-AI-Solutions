@@ -1,0 +1,8 @@
+-- Measure: Sales By Year (Optimized)
+-- Purpose: Uses SUMMARIZECOLUMNS instead of SUMMARIZE for measure evaluation.
+
+Sales By Year (Optimized) :=
+SUMMARIZECOLUMNS (
+    DimDate[Year],
+    "Sales", [Total Sales]
+)

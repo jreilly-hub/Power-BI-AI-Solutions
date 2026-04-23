@@ -1,0 +1,14 @@
+-- Measure: Ending Balance
+-- Purpose: Implements semi-additive behavior (sum across non-time, last value across time).
+
+Ending Balance :=
+VAR LastVisibleDate =
+    CALCULATE (
+        MAX ( DimDate[Date] ),
+        REMOVEFILTERS ( DimDate )
+    )
+RETURN
+CALCULATE (
+    [Total Sales],
+    DimDate[Date] = LastVisibleDate
+)

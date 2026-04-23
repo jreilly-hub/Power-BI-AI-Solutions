@@ -1,0 +1,29 @@
+-- Measure: Multi-Role RLS
+-- Purpose: Supports multiple RLS roles (Admin, Manager, Employee).
+
+Multi-Role RLS :=
+VAR CurrentUser =
+    USERPRINCIPALNAME ()
+VAR UserRole =
+    CALCULATE (
+        SELECTEDVALUE ( SecurityRoles[Role] ),
+        SecurityRoles[Email] = CurrentUser
+    )
+RETURN
+SWITCH (
+    UserRole,
+    "Admin", 1,  -- sees all data
+    "Manager",
+        IF (
+            [Manager Level RLS] = 1,
+            1,
+            0
+        ),
+    "Employee",
+        IF (
+            SELECTEDVALUE ( DimEmployee[Email] ) = CurrentUser,
+            1,
+            0
+        ),
+    0
+)
