@@ -1,0 +1,12 @@
+-- Measure: KPI Status Flag
+-- Purpose: Returns a status label based on performance vs target.
+
+KPI Status Flag :=
+VAR VariancePct = [Variance % to Target]
+RETURN
+SWITCH (
+    TRUE (),
+    VariancePct >= 0.10, "Above Target",
+    VariancePct >= -0.05, "On Target",
+    "Below Target"
+)

@@ -1,0 +1,15 @@
+-- Measure: Sales For Manager Hierarchy
+-- Purpose: Aggregates sales for all employees under a manager using PATH functions.
+
+Sales For Manager Hierarchy :=
+VAR CurrentManager = SELECTEDVALUE ( DimEmployee[EmployeeKey] )
+VAR Descendants =
+    PATH ( CurrentManager, DimEmployee[ManagerKey] )
+RETURN
+CALCULATE (
+    [Total Sales],
+    FILTER (
+        DimEmployee,
+        CONTAINSSTRING ( Descendants, DimEmployee[EmployeeKey] )
+    )
+)

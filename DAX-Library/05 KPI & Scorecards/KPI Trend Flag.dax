@@ -1,0 +1,15 @@
+-- Measure: KPI Trend Flag
+-- Purpose: Indicates whether performance is improving, stable, or declining.
+
+KPI Trend Flag :=
+VAR Current = [Total Sales]
+VAR Prior =
+    CALCULATE ( [Total Sales], DATEADD ( DimDate[Date], -1, MONTH ) )
+VAR Diff = Current - Prior
+RETURN
+SWITCH (
+    TRUE (),
+    Diff > 0, "Up",
+    Diff < 0, "Down",
+    "Flat"
+)

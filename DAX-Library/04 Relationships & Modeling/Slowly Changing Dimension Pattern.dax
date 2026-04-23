@@ -1,0 +1,14 @@
+-- Measure: Sales Using Effective Dates
+-- Purpose: Applies SCD Type 2 logic using effective start/end dates.
+
+Sales Using Effective Dates :=
+VAR CurrentDate = MAX ( DimDate[Date] )
+RETURN
+CALCULATE (
+    [Total Sales],
+    FILTER (
+        DimCustomer,
+        DimCustomer[EffectiveStartDate] <= CurrentDate
+            && DimCustomer[EffectiveEndDate] >= CurrentDate
+    )
+)

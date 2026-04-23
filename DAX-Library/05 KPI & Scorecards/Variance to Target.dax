@@ -1,0 +1,5 @@
+-- Measure: Variance to Target
+-- Purpose: Returns the absolute difference between actual and target.
+
+Variance to Target :=
+[Total Sales] - [Total Target]

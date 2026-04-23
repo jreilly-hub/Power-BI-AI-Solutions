@@ -1,0 +1,14 @@
+-- Measure: Sales For Selected Scenario
+-- Purpose: Applies a disconnected scenario slicer using SWITCH logic.
+
+Sales For Selected Scenario :=
+VAR Scenario =
+    SELECTEDVALUE ( ScenarioSlicer[Scenario], "Base" )
+RETURN
+SWITCH (
+    Scenario,
+    "Base", [Total Sales],
+    "Optimistic", [Total Sales] * 1.10,
+    "Pessimistic", [Total Sales] * 0.90,
+    [Total Sales]
+)

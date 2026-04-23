@@ -1,0 +1,17 @@
+-- Measure: Sales Segment (Dynamic)
+-- Purpose: Dynamically segments customers based on percentile ranking.
+
+Sales Segment (Dynamic) :=
+VAR RankPct =
+    DIVIDE (
+        RANKX ( ALL ( DimCustomer ), [Total Sales], , DESC ),
+        CALCULATE ( COUNTROWS ( DimCustomer ), REMOVEFILTERS ( DimCustomer ) )
+    )
+RETURN
+SWITCH (
+    TRUE (),
+    RankPct <= 0.10, "Top 10%",
+    RankPct <= 0.25, "Top 25%",
+    RankPct <= 0.50, "Top 50%",
+    "Bottom 50%"
+)

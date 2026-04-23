@@ -1,0 +1,7 @@
+-- Measure: Dynamic Label
+-- Purpose: Returns formatted sales with thousands separators and currency.
+
+Dynamic Label :=
+VAR SalesAmount = [Total Sales]
+RETURN
+FORMAT ( SalesAmount, "$#,##0" )

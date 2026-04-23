@@ -1,0 +1,8 @@
+-- Measure: Dynamic Subtitle
+-- Purpose: Provides a secondary context label based on selected month.
+
+Dynamic Subtitle :=
+VAR SelectedMonth =
+    SELECTEDVALUE ( DimDate[MonthName], "All Months" )
+RETURN
+"Filtered by: " & SelectedMonth

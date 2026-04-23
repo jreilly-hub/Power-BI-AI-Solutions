@@ -1,0 +1,8 @@
+-- Measure: Dynamic Title
+-- Purpose: Creates a context-aware report title based on selected year.
+
+Dynamic Title :=
+VAR SelectedYear =
+    SELECTEDVALUE ( DimDate[Year], "All Years" )
+RETURN
+"Sales Performance for " & SelectedYear

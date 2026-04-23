@@ -1,0 +1,5 @@
+-- Measure: Variance % to Target
+-- Purpose: Returns the percentage variance between actual and target.
+
+Variance % to Target :=
+DIVIDE ( [Total Sales] - [Total Target], [Total Target] )

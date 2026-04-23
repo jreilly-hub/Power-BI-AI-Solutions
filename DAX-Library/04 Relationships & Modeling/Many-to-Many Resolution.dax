@@ -1,0 +1,11 @@
+-- Measure: Sales Using Bridge Table
+-- Purpose: Resolves many-to-many relationships using a virtual relationship via TREATAS.
+
+Sales Using Bridge Table :=
+VAR CustomerKeys =
+    VALUES ( BridgeCustomerGroup[CustomerKey] )
+RETURN
+CALCULATE (
+    [Total Sales],
+    TREATAS ( CustomerKeys, FactSales[CustomerKey] )
+)

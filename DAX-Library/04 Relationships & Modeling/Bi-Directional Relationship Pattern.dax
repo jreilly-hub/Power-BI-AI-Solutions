@@ -1,0 +1,8 @@
+-- Measure: Sales With Bi-Directional Override
+-- Purpose: Temporarily applies bi-directional filtering for a specific calculation.
+
+Sales With Bi-Directional Override :=
+CALCULATE (
+    [Total Sales],
+    CROSSFILTER ( DimProduct[ProductKey], FactSales[ProductKey], BOTH )
+)

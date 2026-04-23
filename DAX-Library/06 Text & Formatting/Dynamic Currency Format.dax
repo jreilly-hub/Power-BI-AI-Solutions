@@ -1,0 +1,15 @@
+-- Measure: Dynamic Currency Format
+-- Purpose: Applies currency formatting based on selected currency.
+
+Dynamic Currency Format :=
+VAR CurrencyCode =
+    SELECTEDVALUE ( DimCurrency[CurrencyCode], "USD" )
+VAR SalesAmount = [Total Sales]
+RETURN
+SWITCH (
+    CurrencyCode,
+    "USD", FORMAT ( SalesAmount, "$#,##0" ),
+    "EUR", FORMAT ( SalesAmount, "€#,##0" ),
+    "GBP", FORMAT ( SalesAmount, "£#,##0" ),
+    FORMAT ( SalesAmount, "#,##0" )
+)

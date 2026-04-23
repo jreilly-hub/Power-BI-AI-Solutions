@@ -1,0 +1,13 @@
+-- Measure: Dynamic Unit Scaling
+-- Purpose: Scales numbers to K/M/B for readability.
+
+Dynamic Unit Scaling :=
+VAR Value = [Total Sales]
+RETURN
+SWITCH (
+    TRUE (),
+    Value >= 1000000000, FORMAT ( Value / 1000000000, "0.0" ) & "B",
+    Value >= 1000000, FORMAT ( Value / 1000000, "0.0" ) & "M",
+    Value >= 1000, FORMAT ( Value / 1000, "0.0" ) & "K",
+    FORMAT ( Value, "0" )
+)

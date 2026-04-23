@@ -1,0 +1,13 @@
+-- Measure: Sales Segment (Static)
+-- Purpose: Categorizes customers into static sales buckets.
+
+Sales Segment (Static) :=
+VAR SalesAmount = [Total Sales]
+RETURN
+SWITCH (
+    TRUE (),
+    SalesAmount >= 100000, "Platinum",
+    SalesAmount >= 50000, "Gold",
+    SalesAmount >= 10000, "Silver",
+    "Bronze"
+)

@@ -1,0 +1,14 @@
+-- Measure: Weighted KPI Score
+-- Purpose: Calculates a weighted KPI score across multiple metrics.
+
+Weighted KPI Score :=
+VAR SalesScore = DIVIDE ( [Total Sales], [Total Target] )
+VAR TrendScore =
+    SWITCH (
+        [KPI Trend Flag],
+        "Up", 1,
+        "Flat", 0.5,
+        "Down", 0
+    )
+RETURN
+( SalesScore * 0.7 ) + ( TrendScore * 0.3 )

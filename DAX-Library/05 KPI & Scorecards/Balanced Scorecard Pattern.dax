@@ -1,0 +1,18 @@
+-- Measure: Balanced Scorecard Index
+-- Purpose: Creates a balanced scorecard metric across four perspectives.
+
+Balanced Scorecard Index :=
+VAR Financial = [Variance % to Target]
+VAR Customer = [Composite KPI Index]
+VAR Internal = [Process Efficiency Score]   -- placeholder measure
+VAR Learning = [Training Completion Rate]   -- placeholder measure
+RETURN
+AVERAGEX (
+    {
+        ( "Financial", Financial ),
+        ( "Customer", Customer ),
+        ( "Internal", Internal ),
+        ( "Learning", Learning )
+    },
+    [Value]
+)

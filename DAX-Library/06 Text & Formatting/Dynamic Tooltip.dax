@@ -1,0 +1,9 @@
+-- Measure: Dynamic Tooltip
+-- Purpose: Creates a tooltip showing sales and YoY variance.
+
+Dynamic Tooltip :=
+VAR SalesAmount = FORMAT ( [Total Sales], "$#,##0" )
+VAR YoYVariance = FORMAT ( [YoY Variance], "$#,##0" )
+RETURN
+"Sales: " & SalesAmount & UNICHAR(10) &
+"YoY Change: " & YoYVariance

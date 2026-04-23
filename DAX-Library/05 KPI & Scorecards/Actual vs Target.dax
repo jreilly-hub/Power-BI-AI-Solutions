@@ -1,0 +1,5 @@
+-- Measure: Actual vs Target
+-- Purpose: Returns the variance between actual sales and target.
+
+Actual vs Target :=
+[Total Sales] - [Total Target]

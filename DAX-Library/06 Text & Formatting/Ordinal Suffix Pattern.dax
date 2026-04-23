@@ -1,0 +1,8 @@
+-- Measure: Ordinal Day Label
+-- Purpose: Adds ordinal suffixes (st, nd, rd, th) to day numbers.
+
+Ordinal Day Label :=
+VAR DayNum = DAY ( MAX ( DimDate[Date] ) )
+VAR Suffix =
+    SWITCH (
+        TRUE (),

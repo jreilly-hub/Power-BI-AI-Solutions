@@ -1,0 +1,11 @@
+-- Measure: Sales By Customer Group
+-- Purpose: Applies a bridge table to filter fact data by customer group.
+
+Sales By Customer Group :=
+VAR CustomerKeys =
+    VALUES ( BridgeCustomerGroup[CustomerKey] )
+RETURN
+CALCULATE (
+    [Total Sales],
+    TREATAS ( CustomerKeys, FactSales[CustomerKey] )
+)

@@ -1,0 +1,8 @@
+-- Measure: Sales By Invoice Date
+-- Purpose: Activates the Invoice Date relationship for date-based calculations.
+
+Sales By Invoice Date :=
+CALCULATE (
+    [Total Sales],
+    USERELATIONSHIP ( DimDate[Date], FactSales[InvoiceDate] )
+)

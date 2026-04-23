@@ -1,0 +1,13 @@
+-- Measure: Composite KPI Index
+-- Purpose: Combines multiple KPIs into a single index score.
+
+Composite KPI Index :=
+VAR SalesPct = DIVIDE ( [Total Sales], [Total Target] )
+VAR CustomerCount = DISTINCTCOUNT ( FactSales[CustomerKey] )
+VAR CustomerPct =
+    DIVIDE (
+        CustomerCount,
+        CALCULATE ( DISTINCTCOUNT ( FactSales[CustomerKey] ), REMOVEFILTERS ( DimDate ) )
+    )
+RETURN
+( SalesPct * 0.6 ) + ( CustomerPct * 0.4 )

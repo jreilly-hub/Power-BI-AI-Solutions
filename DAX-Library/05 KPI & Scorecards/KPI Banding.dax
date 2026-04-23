@@ -1,0 +1,13 @@
+-- Measure: KPI Banding
+-- Purpose: Categorizes performance into KPI bands.
+
+KPI Banding :=
+VAR VariancePct = [Variance % to Target]
+RETURN
+SWITCH (
+    TRUE (),
+    VariancePct >= 0.20, "Excellent",
+    VariancePct >= 0.05, "Good",
+    VariancePct >= -0.05, "Acceptable",
+    "Needs Improvement"
+)

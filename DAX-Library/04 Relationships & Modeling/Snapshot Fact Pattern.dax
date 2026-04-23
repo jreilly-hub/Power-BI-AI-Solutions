@@ -1,0 +1,14 @@
+-- Measure: Ending Inventory
+-- Purpose: Returns the last known inventory snapshot for the selected period.
+
+Ending Inventory :=
+VAR LastDate =
+    CALCULATE (
+        MAX ( FactInventory[SnapshotDate] ),
+        REMOVEFILTERS ( FactInventory )
+    )
+RETURN
+CALCULATE (
+    SUM ( FactInventory[Quantity] ),
+    FactInventory[SnapshotDate] = LastDate
+)
