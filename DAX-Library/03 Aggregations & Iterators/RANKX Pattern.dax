@@ -1,0 +1,10 @@
+-- Measure: Customer Rank By Sales
+-- Purpose: Ranks customers by total sales in descending order.
+
+Customer Rank By Sales :=
+RANKX (
+    ALL ( DimCustomer ),
+    [Total Sales],
+    ,
+    DESC
+)

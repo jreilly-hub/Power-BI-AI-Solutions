@@ -1,0 +1,13 @@
+-- Measure: Sales Grouped By Year
+-- Purpose: Groups by year and aggregates sales using SUMX over CURRENTGROUP.
+
+Sales Grouped By Year :=
+GROUPBY (
+    DimDate,
+    DimDate[Year],
+    "Sales",
+        SUMX (
+            CURRENTGROUP (),
+            [Total Sales]
+        )
+)

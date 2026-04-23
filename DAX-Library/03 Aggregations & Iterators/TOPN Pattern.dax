@@ -1,0 +1,10 @@
+-- Measure: Top 10 Customers By Sales
+-- Purpose: Returns a table of the top 10 customers by sales.
+
+Top 10 Customers By Sales :=
+TOPN (
+    10,
+    ALL ( DimCustomer ),
+    [Total Sales],
+    DESC
+)

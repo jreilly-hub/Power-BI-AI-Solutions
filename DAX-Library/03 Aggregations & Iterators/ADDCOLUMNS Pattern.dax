@@ -1,0 +1,8 @@
+-- Measure: Sales With Margin Table
+-- Purpose: Returns a table with an added margin calculation.
+
+Sales With Margin Table :=
+ADDCOLUMNS (
+    FactSales,
+    "Margin", FactSales[SalesAmount] - FactSales[CostAmount]
+)

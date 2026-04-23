@@ -1,0 +1,13 @@
+-- Measure: Orders Above Threshold
+-- Purpose: Counts orders where sales exceed a defined threshold.
+
+Orders Above Threshold :=
+VAR Threshold = 1000
+RETURN
+COUNTX (
+    FILTER (
+        VALUES ( FactSales[OrderID] ),
+        [Total Sales] > Threshold
+    ),
+    FactSales[OrderID]
+)

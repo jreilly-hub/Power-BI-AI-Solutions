@@ -1,0 +1,5 @@
+-- Measure: Distinct Customers
+-- Purpose: Counts distinct customers in the current filter context.
+
+Distinct Customers :=
+DISTINCTCOUNT ( FactSales[CustomerKey] )

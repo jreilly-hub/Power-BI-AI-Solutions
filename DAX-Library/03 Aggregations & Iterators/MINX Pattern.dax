@@ -1,0 +1,8 @@
+-- Measure: Minimum Order Value
+-- Purpose: Returns the minimum sales value across orders.
+
+Minimum Order Value :=
+MINX (
+    VALUES ( FactSales[OrderID] ),
+    [Total Sales]
+)

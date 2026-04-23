@@ -1,0 +1,9 @@
+-- Measure: Sales By Year Table
+-- Purpose: Returns a table of sales aggregated by year.
+
+Sales By Year Table :=
+SUMMARIZE (
+    DimDate,
+    DimDate[Year],
+    "Sales", [Total Sales]
+)

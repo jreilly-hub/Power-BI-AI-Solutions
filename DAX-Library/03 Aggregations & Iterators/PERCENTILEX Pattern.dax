@@ -1,0 +1,9 @@
+-- Measure: 90th Percentile Order Value
+-- Purpose: Returns the 90th percentile of order sales.
+
+90th Percentile Order Value :=
+PERCENTILEX.INC (
+    VALUES ( FactSales[OrderID] ),
+    [Total Sales],
+    0.9
+)

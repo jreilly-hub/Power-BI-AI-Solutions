@@ -1,0 +1,8 @@
+-- Measure: Maximum Order Value
+-- Purpose: Returns the maximum sales value across orders.
+
+Maximum Order Value :=
+MAXX (
+    VALUES ( FactSales[OrderID] ),
+    [Total Sales]
+)

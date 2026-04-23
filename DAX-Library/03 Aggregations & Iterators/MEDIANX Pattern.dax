@@ -1,0 +1,8 @@
+-- Measure: Median Order Value
+-- Purpose: Returns the median sales value across orders.
+
+Median Order Value :=
+MEDIANX (
+    VALUES ( FactSales[OrderID] ),
+    [Total Sales]
+)

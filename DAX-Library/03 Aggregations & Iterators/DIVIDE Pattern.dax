@@ -1,0 +1,5 @@
+-- Measure: Average Sales Per Customer
+-- Purpose: Calculates average sales per distinct customer.
+
+Average Sales Per Customer :=
+DIVIDE ( [Total Sales], [Distinct Customers] )
