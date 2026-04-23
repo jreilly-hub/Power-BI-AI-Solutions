@@ -1,0 +1,5 @@
+Sales Using One Way Date Relationship :=
+CALCULATE (
+    [Total Sales],
+    CROSSFILTER ( DimDate[Date], FactSales[OrderDate], ONEWAY )
+)

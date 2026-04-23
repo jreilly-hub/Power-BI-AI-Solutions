@@ -1,0 +1,5 @@
+Sales Respecting User Selections :=
+CALCULATE (
+    [Total Sales],
+    ALLSELECTED ( DimDate )
+)

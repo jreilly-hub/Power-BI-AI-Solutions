@@ -1,0 +1,7 @@
+Dynamic Date Level Measure :=
+SWITCH (
+    TRUE (),
+    ISINSCOPE ( DimDate[Month] ), [Total Sales],
+    ISINSCOPE ( DimDate[Year] ), [Total YTD],
+    [Total Sales]
+)

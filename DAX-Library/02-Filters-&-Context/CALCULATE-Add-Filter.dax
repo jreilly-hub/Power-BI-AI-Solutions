@@ -1,0 +1,5 @@
+Sales Online Only :=
+CALCULATE (
+    [Total Sales],
+    FactSales[Channel] = "Online"
+)

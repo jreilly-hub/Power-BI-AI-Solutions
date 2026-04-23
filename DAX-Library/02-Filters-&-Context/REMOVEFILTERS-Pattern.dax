@@ -1,0 +1,5 @@
+Sales All Time :=
+CALCULATE (
+    [Total Sales],
+    REMOVEFILTERS ( DimDate )
+)

@@ -1,0 +1,5 @@
+Sales By Ship Date :=
+CALCULATE (
+    [Total Sales],
+    USERELATIONSHIP ( DimDate[Date], FactSales[ShipDate] )
+)

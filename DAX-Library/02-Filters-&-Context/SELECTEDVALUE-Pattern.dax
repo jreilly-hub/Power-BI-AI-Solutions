@@ -1,0 +1,2 @@
+Selected Currency Code :=
+SELECTEDVALUE ( DimCurrency[CurrencyCode], "USD" )

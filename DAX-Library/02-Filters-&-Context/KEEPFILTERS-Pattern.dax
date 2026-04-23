@@ -1,0 +1,5 @@
+Sales Online Narrowed :=
+CALCULATE (
+    [Total Sales],
+    KEEPFILTERS ( FactSales[Channel] = "Online" )
+)

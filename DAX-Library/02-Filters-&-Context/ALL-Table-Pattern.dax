@@ -1,0 +1,5 @@
+Sales Ignore Date Filters :=
+CALCULATE (
+    [Total Sales],
+    ALL ( DimDate )
+)

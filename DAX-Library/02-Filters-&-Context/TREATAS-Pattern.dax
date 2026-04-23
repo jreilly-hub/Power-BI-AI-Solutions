@@ -1,0 +1,8 @@
+Sales From Disconnected Year Slicer :=
+VAR SelectedYears =
+    VALUES ( YearSlicer[Year] )
+RETURN
+CALCULATE (
+    [Total Sales],
+    TREATAS ( SelectedYears, DimDate[Year] )
+)

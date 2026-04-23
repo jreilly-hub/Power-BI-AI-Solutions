@@ -1,0 +1,6 @@
+Sales When Single Product Selected :=
+IF (
+    HASONEVALUE ( DimProduct[ProductKey] ),
+    [Total Sales],
+    BLANK ()
+)

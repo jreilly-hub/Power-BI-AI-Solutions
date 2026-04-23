@@ -1,0 +1,2 @@
+Distinct Year Count :=
+COUNTROWS ( VALUES ( DimDate[Year] ) )

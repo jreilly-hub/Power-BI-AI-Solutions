@@ -1,0 +1,8 @@
+Sales For Selected Year :=
+VAR SelectedYear =
+    SELECTEDVALUE ( DimDate[Year] )
+RETURN
+CALCULATE (
+    [Total Sales],
+    DimDate[Year] = SelectedYear
+)

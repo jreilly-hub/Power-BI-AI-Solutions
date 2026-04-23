@@ -1,0 +1,5 @@
+Sales By Year Ignore Other Date Columns :=
+CALCULATE (
+    [Total Sales],
+    ALLEXCEPT ( DimDate, DimDate[Year] )
+)

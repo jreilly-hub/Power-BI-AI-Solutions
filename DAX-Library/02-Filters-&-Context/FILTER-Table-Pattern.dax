@@ -1,0 +1,8 @@
+Sales High Value Orders :=
+CALCULATE (
+    [Total Sales],
+    FILTER (
+        FactSales,
+        FactSales[SalesAmount] > 1000
+    )
+)
