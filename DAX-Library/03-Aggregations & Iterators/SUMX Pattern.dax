@@ -1,0 +1,8 @@
+-- Measure: Sales After Discount
+-- Purpose: Calculates sales using quantity and net price at the row level.
+
+Sales After Discount :=
+SUMX (
+    FactSales,
+    FactSales[Quantity] * FactSales[NetPrice]
+)

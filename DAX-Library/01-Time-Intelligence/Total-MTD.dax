@@ -1,5 +1,8 @@
-﻿Total MTD :=
-CALCULATE(
+﻿-- Measure: Total MTD
+-- Purpose: Calculates month-to-date total sales.
+
+Total MTD :=
+CALCULATE (
     [Total Sales],
-    DATESMTD('DimDate'[Date])
+    DATESMTD ( DimDate[Date] )
 )

@@ -1,9 +1,12 @@
+-- Measure: YoY Growth %
+-- Purpose: Calculates year-over-year percentage growth.
+
 YoY Growth % :=
 VAR CurrentYear = [Total Sales]
 VAR PriorYear =
-    CALCULATE(
+    CALCULATE (
         [Total Sales],
-        SAMEPERIODLASTYEAR('DimDate'[Date])
+        SAMEPERIODLASTYEAR ( DimDate[Date] )
     )
 RETURN
-DIVIDE(CurrentYear - PriorYear, PriorYear)
+DIVIDE ( CurrentYear - PriorYear, PriorYear )

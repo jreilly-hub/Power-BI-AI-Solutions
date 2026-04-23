@@ -1,9 +1,12 @@
-Rolling 3M :=
-CALCULATE(
+-- Measure: Rolling 3 Months
+-- Purpose: Calculates sales for the last 3 months from the current date.
+
+Rolling 3 Months :=
+CALCULATE (
     [Total Sales],
-    DATESINPERIOD(
-        'DimDate'[Date],
-        MAX('DimDate'[Date]),
+    DATESINPERIOD (
+        DimDate[Date],
+        MAX ( DimDate[Date] ),
         -3,
         MONTH
     )

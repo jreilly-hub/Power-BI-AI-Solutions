@@ -1,8 +1,13 @@
+-- Measure: Current Year Total
+-- Purpose: Returns total sales for the current year.
+
 Current Year Total :=
-CALCULATE(
+VAR CurrentYear = YEAR ( MAX ( DimDate[Date] ) )
+RETURN
+CALCULATE (
     [Total Sales],
-    FILTER(
-        ALL('DimDate'),
-        YEAR('DimDate'[Date]) = YEAR(MAX('DimDate'[Date]))
+    FILTER (
+        REMOVEFILTERS ( DimDate ),
+        YEAR ( DimDate[Date] ) = CurrentYear
     )
 )

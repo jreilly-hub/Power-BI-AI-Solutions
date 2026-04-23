@@ -1,8 +1,11 @@
+-- Measure: Fiscal YTD
+-- Purpose: Calculates fiscal year-to-date sales.
+
 Fiscal YTD :=
-CALCULATE(
+CALCULATE (
     [Total Sales],
-    DATESYTD(
-        'DimDate'[Date],
-        "6/30"   -- Example: fiscal year ends June 30
+    DATESYTD (
+        DimDate[Date],
+        "6/30"
     )
 )

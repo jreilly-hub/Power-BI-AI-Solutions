@@ -1,0 +1,8 @@
+-- Measure: Average Order Value
+-- Purpose: Calculates average sales per order.
+
+Average Order Value :=
+AVERAGEX (
+    VALUES ( FactSales[OrderID] ),
+    [Total Sales]
+)

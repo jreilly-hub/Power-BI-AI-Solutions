@@ -1,8 +1,11 @@
+-- Measure: Fiscal MTD
+-- Purpose: Calculates fiscal month-to-date sales.
+
 Fiscal MTD :=
-CALCULATE(
+CALCULATE (
     [Total Sales],
-    DATESMTD(
-        'DimDate'[Date],
+    DATESMTD (
+        DimDate[Date],
         "6/30"
     )
 )

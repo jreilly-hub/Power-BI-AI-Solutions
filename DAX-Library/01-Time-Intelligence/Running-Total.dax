@@ -1,8 +1,11 @@
+-- Measure: Running Total
+-- Purpose: Calculates cumulative sales up to the current date.
+
 Running Total :=
-CALCULATE(
+CALCULATE (
     [Total Sales],
-    FILTER(
-        ALL('DimDate'),
-        'DimDate'[Date] <= MAX('DimDate'[Date])
+    FILTER (
+        REMOVEFILTERS ( DimDate ),
+        DimDate[Date] <= MAX ( DimDate[Date] )
     )
 )

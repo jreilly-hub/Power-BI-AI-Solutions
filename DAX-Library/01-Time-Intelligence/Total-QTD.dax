@@ -1,5 +1,8 @@
+-- Measure: Total QTD
+-- Purpose: Calculates quarter-to-date total sales.
+
 Total QTD :=
-CALCULATE(
+CALCULATE (
     [Total Sales],
-    DATESQTD('DimDate'[Date])
+    DATESQTD ( DimDate[Date] )
 )

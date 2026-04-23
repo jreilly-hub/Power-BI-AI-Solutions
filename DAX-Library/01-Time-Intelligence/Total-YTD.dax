@@ -1,5 +1,8 @@
-﻿Total YTD :=
-CALCULATE(
+﻿-- Measure: Total YTD
+-- Purpose: Calculates year-to-date total sales.
+
+Total YTD :=
+CALCULATE (
     [Total Sales],
-    DATESYTD('DimDate'[Date])
+    DATESYTD ( DimDate[Date] )
 )

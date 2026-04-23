@@ -1,5 +1,8 @@
+-- Measure: Same Period Last Year
+-- Purpose: Returns sales for the same period in the previous year.
+
 Same Period Last Year :=
-CALCULATE(
+CALCULATE (
     [Total Sales],
-    SAMEPERIODLASTYEAR('DimDate'[Date])
+    SAMEPERIODLASTYEAR ( DimDate[Date] )
 )

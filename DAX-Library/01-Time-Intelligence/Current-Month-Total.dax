@@ -1,9 +1,15 @@
+-- Measure: Current Month Total
+-- Purpose: Returns total sales for the current month.
+
 Current Month Total :=
-CALCULATE(
+VAR CurrentYear = YEAR ( MAX ( DimDate[Date] ) )
+VAR CurrentMonth = MONTH ( MAX ( DimDate[Date] ) )
+RETURN
+CALCULATE (
     [Total Sales],
-    FILTER(
-        ALL('DimDate'),
-        YEAR('DimDate'[Date]) = YEAR(MAX('DimDate'[Date])) &&
-        MONTH('DimDate'[Date]) = MONTH(MAX('DimDate'[Date]))
+    FILTER (
+        REMOVEFILTERS ( DimDate ),
+        YEAR ( DimDate[Date] ) = CurrentYear
+            && MONTH ( DimDate[Date] ) = CurrentMonth
     )
 )

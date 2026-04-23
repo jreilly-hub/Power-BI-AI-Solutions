@@ -1,9 +1,12 @@
+-- Measure: YoY Variance
+-- Purpose: Calculates year-over-year absolute variance.
+
 YoY Variance :=
 VAR CurrentYear = [Total Sales]
 VAR PriorYear =
-    CALCULATE(
+    CALCULATE (
         [Total Sales],
-        SAMEPERIODLASTYEAR('DimDate'[Date])
+        SAMEPERIODLASTYEAR ( DimDate[Date] )
     )
 RETURN
 CurrentYear - PriorYear
