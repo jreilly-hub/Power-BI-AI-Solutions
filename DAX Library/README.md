@@ -130,7 +130,7 @@ Drop individual `.dax` files into each category folder alongside the README as y
 
 
 
-\*\*John D. Reilly\*\* — Power BI Analyst \& Developer | Enterprise Analytics Architecture
+\*\*John Reilly\*\* — Power BI Analyst \& Developer | Enterprise Analytics Architecture
 
 
 
