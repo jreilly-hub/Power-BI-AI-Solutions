@@ -1,6 +1,4 @@
-\---
-
-title: Sample Power BI Paginated Reports
+title: # Sample Power BI Paginated Reports
 
 description: Learn how to download and use sample Power BI paginated reports from GitHub, including invoice, label, mailing letter, transcript, and sales performance templates.
 
